@@ -1,0 +1,221 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2acac;
+    font-family: 'Mochiy Pop P One', sans-serif;
+  }
+
+  input#open {
+    display: none;
+  }
+
+  .header {
+    font-size: 30px;
+    color: #ba1c1c;
+    text-shadow:2px 2px 2px #fff0f3;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  
+  .valentines-day-card {
+    position: relative;
+    width: 300px;
+    height:600px;
+    transform-style: preserve-3d;
+      transform: perspective(2500px);
+    transition: .3s;
+  }
+  
+  .card-front {
+    position: relative;
+    background-color: #fff0f3;
+    width: 300px;
+    height:600px;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 30px 0 50px rgba(0,0,0,0.3);
+    transition: .3s;
+  }
+  
+  .card-front:before {
+    content:"";
+    position: absolute;
+    width: 280px;
+    height: 580px;
+    background-color: #d04e4e;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .card-inside {
+    position: absolute;
+    background-color: #fff0f3;
+    width: 300px;
+    height:600px;
+    z-index:-1;
+    left:0;
+    top:0;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.22), 100px 20px 100px rgba(0,0,0,0.1);
+  }
+  
+  /* .open {
+    position: absolute;
+    width: 300px;
+    height:600px;
+    left:0;
+    top:0;
+    background-color: transparent;
+    z-index:6;
+    cursor: pointer;
+  }
+  
+  #open:checked ~ .card-front {
+    transform: rotateY(-155deg);
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+  }
+  
+  #open:checked ~ .card-front:before {
+    z-index:5;
+    background-color: #fff0f3;
+    width:300px;
+    height:600px;
+    top:0;
+    left:0;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.1), 30px 0 50px rgba(0,0,0,0.1);
+  } */
+
+  .note {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background-color: #fff0f3;
+    top:205px;
+    left:50px;
+    color: #333;
+    font-size:30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.3));
+  }
+  
+  .note:before, .note:after {
+    position: absolute;
+    content:"";
+    background-color: #ba1c1c;
+    width: 40px;
+    height:40px;
+  }
+  
+  .note:before {
+    transform: rotate(-45deg);
+    top:-20px;
+    left:80px;
+  }
+  
+  .note:after {
+    border-radius:50%;
+    top:-35px;
+    left:65px;
+    box-shadow:30px 0 #ba1c1c;
+  }
+
+  .text-one {
+    position: absolute;
+    color: #333;
+    font-size: 15px;
+    top:30px;
+    left: 20px;
+    width:300px;
+    text-align: start;
+  }
+
+  .paragraph {
+    position: relative;
+    width: 250px;
+    font-size: 10px;
+    top: 70px;
+    left: 20px;
+    text-align: justify;
+  }
+
+  .outro {
+    position: relative;
+    width: 250px;
+    font-size: 10px;
+    top: 70px;
+    left: 20px;
+    text-align: justify;
+  }
+
+  .img-us {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: url(images/IMG_4624.jpeg);
+    background-size: cover;
+    background-position: center;
+    top:100px;
+    left:40px;
+    border: 5px solid #d04e4e;
+    border-radius: 2px;
+  }
+  
+
+  .heart {
+    position: absolute;
+    background-color: #d04e4e;
+    height: 10px;
+    width:  10px;
+    top:52px;
+    left:150px;
+    transform: rotate(-45deg);
+    animation: .8s beat infinite;
+  }
+    
+  .heart:before, .heart:after {
+    content:"";
+    background-color: #d04e4e;
+    border-radius:50%;
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    }
+    
+  .heart:before {
+    top:-5px;
+    left:0;
+  }
+    
+  .heart:after {
+    left:5px;
+    top:0;
+  }
+
+  .ps {
+    color: #ba1c1c;
+    margin-top: 30px;
+    text-shadow:1px 1px 1px #fff0f3;
+    text-transform: capitalize;
+  }
+  
+  
+  @keyframes close {
+      0%, 100% {
+          transform: scale(1, .05);
+      }
+      5%, 95% {
+          transform: scale(1, 1);
+      }
+  }
+  
+  @keyframes beat {
+    0%, 40%, 100% {
+      transform: scale(1) rotate(-45deg);
+    }
+    25%, 60% {
+      transform: scale(1.1) rotate(-45deg);
+    }
+  }
